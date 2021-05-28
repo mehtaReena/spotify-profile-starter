@@ -27,5 +27,7 @@ You need to use `redux` compulsorily in this project.
 
 
 Stretch: Mobile friendly:
+
 ![](./screenshots/mob-1.png)
+
 ![](./screenshots/mob-2.png)
