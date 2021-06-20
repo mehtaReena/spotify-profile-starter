@@ -54,7 +54,7 @@ const Pic = styled.div`
         filter: invert();
     }
 `
-const Status = styled.div`
+const StatusBar = styled.div`
     display: flex;
     max-width: 300px;
     width: 100%;
@@ -136,7 +136,7 @@ export default function ProfilePage() {
         // eslint-disable-next-line
         [token])
 
-        const clickhandler = () => {
+        const clickHandler = () => {
             alert("logout")
             localStorage.setItem("Token", null);
             dispatch(removeToken());
@@ -155,7 +155,7 @@ export default function ProfilePage() {
                             <img className={user.profile.images[0] ? null : 'default'} src={user.profile.images[0] ? user.profile.images[0].url : "/images/person.svg"} alt="" />
                         </Pic>
                         <h1 className="name">{user.profile.display_name}</h1>
-                        <Status>
+                        <StatusBar>
                             <div className="links">
                                 <p>{user.profile.followers.total}</p>
                                 <p>followers</p>
@@ -168,8 +168,8 @@ export default function ProfilePage() {
                                 <p>{user.profile.playlists}</p>
                                 <p>playlists</p>
                             </div>
-                    </Status>
-                    <Logout onClick={clickhandler}>Logout</Logout>
+                    </StatusBar>
+                    <Logout onClick={clickHandler}>Logout</Logout>
                     </Profile>
                 }
                 <TopArtists>
