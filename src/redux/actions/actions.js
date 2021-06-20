@@ -62,6 +62,7 @@ export let topArtistsSuccess = (list, term) => ({
 export let getToken = (code) => {
   return async (dispatch) => {
     const body = "grant_type=authorization_code&code=" + code + redirect;
+    console.log( " get Token .."+ body)
     try {
       let response = await axios.post(tokenURL, body, {
         headers: {
