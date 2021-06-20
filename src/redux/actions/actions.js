@@ -18,11 +18,13 @@ const tokenURL = "https://accounts.spotify.com/api/token";
 
 const Client =  "M2RiZjFhOTE0NmM2NDFlMGI2MjliZWY1YmE3MTFkODQ6OWYzMTIyM2QyZTNmNDg3NGJlMTFhZGY3ODhmNjQ1YjM=";
 
-//localhost redirect for local testing
-//  const redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
-//netlify redirect after deploying
-  const redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
+  let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
+
+
+if (window.location.href === "https://nostalgic-goldstine-cb30ce.netlify.app/") {
+  redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
+  }
 
 
 export let throwError = (e) => ({

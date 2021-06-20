@@ -34,12 +34,12 @@ export default function Login() {
     const response = '&response_type=code'
     const scopes = '&scope=user-read-private%20user-read-email%20playlist-read-private%20user-follow-read%20user-top-read'
 
-    // localhost redirect
-    //   const redirect = '&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile'
+    let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
-    //netlify redirect
-     const redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
 
+if (window.location.href === "https://nostalgic-goldstine-cb30ce.netlify.app/") {
+  redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
+  }
     const LocalToken = localStorage.getItem('Token')
     let history = useHistory()
 
