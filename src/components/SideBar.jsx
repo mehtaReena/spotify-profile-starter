@@ -106,7 +106,8 @@ export default function SideBar() {
                     <p>Playlists</p>
                 </Page>
             </Pages>
-            <a href='#'><Logo github src='/images/github-logo.svg' alt='github link' /></a>
+
+            <a href='https://github.com/'><Logo github src='/images/github-logo.svg' alt='github link' /></a>
         </Wrapper>
     )
 }
