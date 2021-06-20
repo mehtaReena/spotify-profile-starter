@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom"
 import styled from "styled-components";
 import { getInfo, getToken, getTopArtists, getTopTracks, tokenSuccess ,removeToken} from "../redux/actions/actions";
-import Error from "./Error";
+
 import List from "./List";
 import SideBar from "./SideBar";
 
@@ -148,9 +148,7 @@ export default function ProfilePage() {
         <Wrapper>
             <SideBar />
             <Content>
-                {error &&
-                    <Error />
-                }
+
                 {user && user.profile && !error &&
                     <Profile>
                         <Pic>
