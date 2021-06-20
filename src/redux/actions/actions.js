@@ -130,7 +130,7 @@ export let getTopTracks = (term) => {
   };
 };
 
-// Request to get top artists, term parameter stands for the time range (long_term, medium_term, short_term)
+
 export let getTopArtists = (term) => {
   return async (dispatch, getState) => {
     try {
@@ -138,8 +138,7 @@ export let getTopArtists = (term) => {
         headers: { Authorization: "Bearer " + getState().auth.token },
       });
         console.log("ARTISTS", response);
-      // response.data.items is an array of the top 20 artists
-      // we're saving the term in the state too just so the buttons on top of the topartist page knows which of them is active
+
       dispatch(topArtistsSuccess(response.data.items, term));
     }
     catch (e) {
