@@ -114,9 +114,7 @@ export default function ProfilePage() {
     let user = useSelector(state => state.user)
     let error = useSelector(state => state.auth.error)
 
-    // After mount, first will check if there's token in the state (in case we came from 1 page to another)
-    // then checking localstorage if there's state and use it to try to request for info
-    // if none, a token will be requested using the code in the url
+
     useEffect(() => {
         if (!token) {
             if (LocalToken) dispatch(tokenSuccess(LocalToken, RefreshToken))
@@ -127,7 +125,7 @@ export default function ProfilePage() {
         // eslint-disable-next-line
         , [])
 
-    // Request for info once token is stored or token is refreshed
+
     useEffect(() => {
         if (token) {
             dispatch(getInfo())
