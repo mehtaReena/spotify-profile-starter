@@ -54,7 +54,7 @@ const Pic = styled.div`
         filter: invert();
     }
 `
-const Stats = styled.div`
+const Status = styled.div`
     display: flex;
     max-width: 300px;
     width: 100%;
@@ -95,7 +95,7 @@ const Logout = styled.button`
         background-color: #ffffff1d;
     }
 `
-const BottomPart = styled.div`
+const TopArtists = styled.div`
     padding: 3em 0em 2em 0em;
     display: flex;
     flex-wrap: wrap;
@@ -157,7 +157,7 @@ export default function ProfilePage() {
                             <img className={user.profile.images[0] ? null : 'default'} src={user.profile.images[0] ? user.profile.images[0].url : "/images/person.svg"} alt="" />
                         </Pic>
                         <h1 className="name">{user.profile.display_name}</h1>
-                        <Stats>
+                        <Status>
                             <div className="links">
                                 <p>{user.profile.followers.total}</p>
                                 <p>followers</p>
@@ -170,18 +170,18 @@ export default function ProfilePage() {
                                 <p>{user.profile.playlists}</p>
                                 <p>playlists</p>
                             </div>
-                    </Stats>
+                    </Status>
                     <Logout onClick={clickhandler}>Logout</Logout>
                     </Profile>
                 }
-                <BottomPart>
+                <TopArtists>
                     {user && user.topArtists &&
                         <List type='Top Artists' data={user.topArtists} />
                     }
                     {user && user.topTracks &&
                         <List type='Top Tracks' data={user.topTracks} />
                     }
-                </BottomPart>
+                </TopArtists>
             </Content>
         </Wrapper>
     )

@@ -63,7 +63,7 @@ const Head = styled.div`
 const Items = styled.div`
     padding: 4em 0em 2em 0em;
     width: 100%;
-    max-width: 1000px;
+    max-width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -116,7 +116,7 @@ export default function TopArtist() {
 
     useEffect(() => {
         if (token) {
-            //getting info too because token refresh catch is in this dispatch :D and it's giving error when i use expired token to get artists
+
             dispatch(getInfo())
             dispatch(getTopArtists('long_term'))
         }
