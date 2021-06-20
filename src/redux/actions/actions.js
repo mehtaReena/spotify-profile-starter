@@ -23,7 +23,8 @@ const Client =
 //  const redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
 //netlify redirect after deploying
-  const redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
+  const redirect = '&redirect_uri=https%3A%2F%2Fnostalgic-goldstine-cb30ce.netlify.app%2Fprofile'
+  // https%3A%2F%2Fnostalgic-goldstine-cb30ce.netlify.app%2Fprofile'
 
 export let throwError = (e) => ({
   type: THROW_ERROR,
