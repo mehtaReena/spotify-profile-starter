@@ -20,10 +20,10 @@ const Client =
   "M2RiZjFhOTE0NmM2NDFlMGI2MjliZWY1YmE3MTFkODQ6OWYzMTIyM2QyZTNmNDg3NGJlMTFhZGY3ODhmNjQ1YjM=";
 
 //localhost redirect for local testing
-// const redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
+ const redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
 //netlify redirect after deploying
- const redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
+//  const redirect = '&redirect_uri=https://nostalgic-goldstine-cb30ce.netlify.app/profile'
 
 export let throwError = (e) => ({
   type: THROW_ERROR,
@@ -56,7 +56,7 @@ export let topArtistsSuccess = (list, term) => ({
 });
 
 
-// If there are no stored token in local storage, this is called to get token from the code in the url
+
 export let getToken = (code) => {
   return async (dispatch) => {
     const body = "grant_type=authorization_code&code=" + code + redirect;
@@ -66,8 +66,7 @@ export let getToken = (code) => {
           Authorization: "Basic " + Client,
         },
       });
-      // It gives token and refresh token, we store both in state and localstorage
-      // This response also shows the scopes we got but we're not storing it
+
       dispatch(tokenSuccess(response.data.access_token, response.data.refresh_token));
       localStorage.setItem("Token", response.data.access_token);
       localStorage.setItem("Refresh", response.data.refresh_token);
@@ -78,19 +77,19 @@ export let getToken = (code) => {
   };
 };
 
-// Getting the initial info to show in the profile page
+
 export let getInfo = () => {
   return async (dispatch, getState) => {
     try {
-      //This gives your name, picture, and number of followers
+
       let profile = await axios.get(ProfileURL, {
         headers: { Authorization: "Bearer " + getState().auth.token },
       });
-      //This gives the number of your followed artists
+
       let following = await axios.get(ProfileURL + "/following?type=artist", {
         headers: { Authorization: "Bearer " + getState().auth.token },
       });
-      //This gives the number of playlist you have
+
       let playlists = await axios.get(ProfileURL + "/playlists", {
         headers: { Authorization: "Bearer " + getState().auth.token },
       });
@@ -98,14 +97,14 @@ export let getInfo = () => {
         dispatch(profileSuccess({ ...profile.data, following: following.data.artists.total, playlists: playlists.data.total, }));
 
     } catch (e) {
-      // Error 401 is given when the token expires. another POST request is made using refresh token to get some new fresh access token
+
       if (e.request.status === 401) {
         try {
           const body = "grant_type=refresh_token&refresh_token=" + getState().auth.refresh;
           let refresh = await axios.post(tokenURL, body, {
             headers: { Authorization: "Basic " + Client },
           });
-          //This request only returns a new access token, and not a new refresh token
+
           dispatch(tokenSuccess(refresh.data.access_token, getState().auth.refresh));
         } catch (err) {
           dispatch(throwError(err));

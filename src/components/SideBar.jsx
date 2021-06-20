@@ -31,7 +31,7 @@ const Icon = styled.img`
     width: 25px;
     height: 25px;
     filter: invert() brightness(.7);
-    margin-bottom: ${props => props.up ? '.3em' : 'auto'};
+    margin-bottom: ${props => props.up ? '.4em' : 'auto'};
 
 `
 
@@ -106,7 +106,7 @@ export default function SideBar() {
                     <p>Playlists</p>
                 </Page>
             </Pages>
-            <a href='https://github.com/aiveeKeiSoriano/spotify-profile-starter'><Logo github src='/images/github-logo.svg' alt='github link' /></a>
+            <a href='#'><Logo github src='/images/github-logo.svg' alt='github link' /></a>
         </Wrapper>
     )
 }
