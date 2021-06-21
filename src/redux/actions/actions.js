@@ -19,10 +19,10 @@ const tokenURL = "https://accounts.spotify.com/api/token";
 const Client = "M2RiZjFhOTE0NmM2NDFlMGI2MjliZWY1YmE3MTFkODQ6OWYzMTIyM2QyZTNmNDg3NGJlMTFhZGY3ODhmNjQ1YjM=";
 
 
-  //let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
+  let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
   //netlify redirect
-  const redirect = '&redirect_uri=https://festive-hopper-6d822d.netlify.app/profile'
+  //const redirect = '&redirect_uri=https://festive-hopper-6d822d.netlify.app/profile'
 
 
 

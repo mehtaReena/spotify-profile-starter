@@ -64,7 +64,13 @@ const Page = styled.div`
         border-left: 4px solid #1FBA57;
     }
 
+    &.active > ${Icon} {
+        filter: invert() brightness(1);
+    }
 
+    &:hover > ${Icon} {
+        filter: invert() brightness(1);
+    }
 `
 
 export default function SideBar() {
