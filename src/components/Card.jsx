@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// In the profile page, there are two containers containing lists of top artists and top tracks
-// this is that
 
 const Container = styled.div`
     flex: 1;
@@ -90,7 +88,7 @@ let ItemLink = styled.a`
     }
 `
 
-export default function List({ type, data }) {
+export default function Card({ type, data }) {
 
     let minute = (ms) => {
         let min = Math.floor(ms / 60000).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })

@@ -4,7 +4,7 @@ import { useHistory, useLocation } from "react-router-dom"
 import styled from "styled-components";
 import { getInfo, getToken, getTopArtists, getTopTracks, tokenSuccess ,removeToken} from "../redux/actions/actions";
 
-import List from "./List";
+import Card from "./Card";
 import SideBar from "./SideBar";
 
 const Wrapper = styled.div`
@@ -174,10 +174,10 @@ export default function ProfilePage() {
                 }
                 <TopArtists>
                     {user && user.topArtists &&
-                        <List type='Top Artists' data={user.topArtists} />
+                        <Card type='Top Artists' data={user.topArtists} />
                     }
                     {user && user.topTracks &&
-                        <List type='Top Tracks' data={user.topTracks} />
+                        <Card type='Top Tracks' data={user.topTracks} />
                     }
                 </TopArtists>
             </Content>
