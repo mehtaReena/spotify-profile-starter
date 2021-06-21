@@ -22,9 +22,7 @@ const Client =  "M2RiZjFhOTE0NmM2NDFlMGI2MjliZWY1YmE3MTFkODQ6OWYzMTIyM2QyZTNmNDg
   let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
 
 
-if (window.location.href === "https://festive-hopper-6d822d.netlify.app/") {
-  redirect = '&redirect_uri=https://festive-hopper-6d822d.netlify.app/profile'
-  }
+
 
 
 export let throwError = (e) => ({
