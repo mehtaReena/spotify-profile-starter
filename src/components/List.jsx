@@ -78,7 +78,7 @@ const Entry = styled.div`
     }
 `
 
-let NameLink = styled.a`
+let ItemLink = styled.a`
     color: white;
     font-size: .8rem;
     font-weight: 500;
@@ -105,20 +105,20 @@ export default function List({ type, data }) {
                 <Link to={type === 'Top Artists' ? '/topartists' : '/toptracks'}><button>See More</button></Link>
             </Head>
             <Items>
-                {data.slice(0, 5).map(el => type === 'Top Artists' ? <Entry key={el.id} artist>
-                    <img src={el.images[0].url} alt="artist/track" />
-                    <NameLink href={el.external_urls.spotify}>{el.name}</NameLink>
+                {data.slice(0, 5).map(item => type === 'Top Artists' ? <Entry key={item.id} artist>
+                    <img src={item.images[0].url} alt="artist/track" />
+                    <ItemLink href={item.external_urls.spotify}>{item.name}</ItemLink>
                 </Entry>
-                    : <Entry key={el.id} track>
-                        <img src={el.album.images[0].url} alt="artist/track" />
+                    : <Entry key={item.id} track>
+                        <img src={item.album.images[0].url} alt="artist/track" />
                         <div className="info">
-                            <NameLink href={el.external_urls.spotify}>{el.name}</NameLink>
+                            <ItemLink href={item.external_urls.spotify}>{item.name}</ItemLink>
                             <div className="artist">
-                                {el.artists.map(el => el.name).join(' • ')}
+                                {item.artists.map(el => el.name).join(' • ')}
                             </div>
                         </div>
                         <div className="duration">
-                            {minute(el.duration_ms)}
+                            {minute(item.duration_ms)}
                         </div>
                     </Entry>
                 )}
