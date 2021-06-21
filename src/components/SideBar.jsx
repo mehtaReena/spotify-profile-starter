@@ -35,7 +35,7 @@ const Icon = styled.img`
 
 `
 
-const Pages = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -78,7 +78,7 @@ export default function SideBar() {
     return (
         <Wrapper>
             <a href='https://open.spotify.com/'><Logo src="/images/spotify-logo.svg" alt="spotify link" /></a>
-            <Pages>
+            <Container>
                 <Link to='/profile'>
                     <Page className={location.pathname === '/profile' ? 'active' : null}>
                         <Icon up src='/images/person.svg' alt='profile page' />
@@ -105,7 +105,7 @@ export default function SideBar() {
                     <Icon src='/images/playlist.svg' alt='Playlist page' />
                     <p>Playlists</p>
                 </Page>
-            </Pages>
+            </Container>
 
             <a href='https://github.com/'><Logo github src='/images/github-logo.svg' alt='github link' /></a>
         </Wrapper>
