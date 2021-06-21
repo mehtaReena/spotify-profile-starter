@@ -35,7 +35,7 @@ export default function Login() {
     const scopes = '&scope=user-read-private%20user-read-email%20playlist-read-private%20user-follow-read%20user-top-read'
 
     //let redirect = "&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fprofile";
-    const redirect = '&redirect_uri=https://festive-hopper-6d822d.netlify.app/profile '
+    const redirect = '&redirect_uri=https://festive-hopper-6d822d.netlify.app/profile'
 
 
     const LocalToken = localStorage.getItem('Token')
