@@ -43,7 +43,7 @@ const Items = styled.div`
     flex-direction: column;
     gap: 1em;
 `
-const Entry = styled.div`
+const Category = styled.div`
     display: flex;
     align-items: center;
     gap: 1em;
@@ -103,11 +103,11 @@ export default function Card({ type, data }) {
                 <Link to={type === 'Top Artists' ? '/topartists' : '/toptracks'}><button>See More</button></Link>
             </Head>
             <Items>
-                {data.slice(0, 5).map(item => type === 'Top Artists' ? <Entry key={item.id} artist>
+                {data.slice(0, 5).map(item => type === 'Top Artists' ? <Category key={item.id} artist>
                     <img src={item.images[0].url} alt="artist/track" />
                     <ItemLink href={item.external_urls.spotify}>{item.name}</ItemLink>
-                </Entry>
-                    : <Entry key={item.id} track>
+                </Category>
+                    : <Category key={item.id} track>
                         <img src={item.album.images[0].url} alt="artist/track" />
                         <div className="info">
                             <ItemLink href={item.external_urls.spotify}>{item.name}</ItemLink>
@@ -118,7 +118,7 @@ export default function Card({ type, data }) {
                         <div className="duration">
                             {minute(item.duration_ms)}
                         </div>
-                    </Entry>
+                    </Category>
                 )}
             </Items>
         </Container>
