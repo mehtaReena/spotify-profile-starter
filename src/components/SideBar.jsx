@@ -21,8 +21,8 @@ const Logo = styled.img`
     cursor: pointer;
 
     ${props => props.github && css`
-        width: 40px;
-        height: 40px;
+        width: 52px;
+        height: 52px;
         filter: invert();
     `}
 `
